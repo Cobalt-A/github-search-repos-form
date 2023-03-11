@@ -1,0 +1,173 @@
+@use 'sass:math'
+@use 'sass:color'
+
+@import config
+
+$black: #1e2124
+$dark: #282b30
+$mediumdark: #36393e
+$lightdark: #424549
+$accent: #2b77e8
+$grey: #b8b9bf
+$white: #f3f4f5
+$red: #d73232
+$green: #31dc5c
+
+/* container */
+
+.app-container
+	max-width: 700px
+	width: 100%
+	padding: 0 15px
+	margin: 0 auto
+	position: relative
+
+.app-row
+	margin: 0 -15px
+	display: flex
+
+.app-column
+	margin: 0 15px
+
+/* find github form section */
+
+.app-find-repo
+	padding-top: 30px
+	padding-bottom: 30px
+
+	.app-form__lable
+		display: block
+		position: relative
+    
+	.app-form__input
+		width: 100%
+		height: 45px
+		border: none
+		border-radius: 10px
+		background: $black
+		margin-bottom: 15px
+		color: $white
+		padding: 20px 15px 5px 15px
+		border: 1px solid $black
+		transition: .3s
+		font-size: 16px
+
+	.app-form__placeholder
+		position: absolute
+		font-size: 16px
+		color: $grey
+		top: 13px
+		left: 15px
+		transition: .3s
+
+	.app-form__input:focus, .app-form__textarea:focus
+		border: 1px solid $accent
+
+
+	.app-form__input:focus + .app-form__placeholder, .comments-form__textarea:focus + .app-form__placeholder
+		font-size: 12px
+		opacity: 0.5
+		top: 5px
+
+	.app-form__input-active
+		border: 1px solid $accent
+
+	.app-form__input-active + .app-form__placeholder
+		font-size: 12px
+		opacity: 0.5
+		top: 5px
+
+	.app-form__input-error + .app-form__placeholder
+		font-size: 12px
+		opacity: 0.5
+		top: 5px
+
+	.app-form__input-error::-webkit-input-placeholder
+		color: $red
+
+
+	.app-form__input-error
+		border: 1px solid $red !important
+
+
+	.app-form__button
+		position: absolute
+		right: 16px
+		top: 1px
+		height: 43px
+		width: 59px
+		border-radius: 10px
+		border: none
+		background-color: $mediumdark
+		color: $white
+		font-size: 18px
+		transition: .3s
+
+	.app-form__button:hover
+		background: $lightdark
+		color: $accent
+
+
+	.repos-wrapper
+		padding-top: 30px
+		padding-bottom: 30px
+
+
+	.repository
+		position: relative
+		background-color: rgba(53,54,59,.737)
+		padding: 15px
+		padding-left: 100px
+		border-radius: 10px
+		color: $white
+		margin-bottom: 30px
+
+	.repository:nth-child(2n)
+		background-color: #36393e
+
+	.repository__avatar
+		width: 65px
+		height: auto
+		border-radius: 100%
+		position: absolute
+		left: 15px
+		top: 15px
+
+
+	.repository__username
+		font-size: 20px
+		color: #fff
+		margin-bottom: 10px
+		display: inline-block
+
+	.repository__last-update
+		font-size: 14px
+		color: $grey
+		margin-left: 10px
+
+	.repository__name
+		font-size: 18px
+		margin-bottom: 10px
+
+	.repository__description
+		font-size: 16px
+		margin-bottom: 15px
+
+	.repository__additional
+		display: flex
+
+	.repository-not-found
+		color: $white
+		font-size: 22px
+		text-align: center
+
+	
+
+	.fa-circle-o-notch
+		animation: calculator-form__loader 1.2s linear infinite
+
+	@keyframes calculator-form__loader 
+		0%
+			transform: rotate(0deg)
+		100% 
+			transform: rotate(360deg)

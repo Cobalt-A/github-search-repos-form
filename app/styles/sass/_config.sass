@@ -1,0 +1,108 @@
+// USER VARIABLES SECTION
+
+$accent: #2b77e8 // Accent Color
+$dark: #282b30
+$fontsize: 16px // Body Font Size
+$textcolor: #333 // Text Color
+$lineheight: 1.65 // Document Line Height
+$userfont: roboto-oh5, sans-serif // User Font Family
+$systemfont: -apple-system, BlinkMacSystemFont, Arial, sans-serif // System Font Family
+
+// Bootstrap compatible gutter variable => $gutter
+$grid-gutter-width: 30px
+$gutter: $grid-gutter-width
+
+// IMPORT SECTION
+
+
+// FONTS LOAD SECTION
+
+@mixin font($fname, $fstyle, $fweight, $furl)
+	@font-face
+		font-family: $fname
+		font-style: $fstyle
+		font-weight: $fweight
+		src: url($furl) format('woff2')
+
+@include font('roboto-oh5', normal, 400, '../fonts/roboto-regular-webfont.woff2')
+@include font('roboto-oh5', italic, 400, '../fonts/roboto-italic-webfont.woff2')
+@include font('roboto-oh5', normal, 700, '../fonts/roboto-bold-webfont.woff2')
+@include font('roboto-oh5', italic, 700, '../fonts/roboto-bolditalic-webfont.woff2')
+
+// GENERAL CSS SETTINGS
+
+::placeholder
+	color: #666
+
+::selection
+	background-color: $accent
+	color: #fff
+
+::-webkit-datetime-edit-fields-wrapper,
+::-webkit-datetime-edit-text,
+::-webkit-datetime-edit-minute,
+::-webkit-datetime-edit-hour-field,
+::-webkit-datetime-edit-day-field,
+::-webkit-datetime-edit-month-field,
+::-webkit-datetime-edit-year-field 
+	padding: 0
+
+body
+	font-family: $userfont
+	font-size: $fontsize
+	line-height: $lineheight
+	color: $textcolor
+	background-color: $dark
+	min-width: 320px
+	position: relative
+	overflow-x: hidden
+
+*, *:before, *:after
+	box-sizing: border-box
+
+html, body, div, span, object, iframe, figure, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, code, em, img, small, strike, strong, sub, sup, tt, b, u, i, ol, ul, li, fieldset, form, label, table, caption, tbody, tfoot, thead, tr, th, td, main, canvas, embed, footer, header, nav, section, video
+	margin: 0
+	padding: 0
+	border: 0
+
+footer, header, nav, section, main
+	display: block
+
+body
+	line-height: 1
+
+ol, ul
+	list-style: none
+
+blockquote, q
+	quotes: none
+
+blockquote:before, blockquote:after, q:before, q:after
+	content: ''
+	content: none
+
+table
+	border-collapse: collapse
+	border-spacing: 0
+
+input, textarea
+	outline: none
+	-webkit-appearance: none
+	border-radius: 0
+	border: none
+	font-family: $userfont
+	font-size: $fontsize
+	line-height: inherit
+	margin: 0
+
+a
+	text-decoration: none
+	color: $accent
+	transition: .3s
+
+a:hover
+	opacity: 0.7
+
+button
+	font-family: $userfont
+	font-size: $fontsize
